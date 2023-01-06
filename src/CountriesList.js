@@ -10,7 +10,7 @@ const CountriesList = ({data}) => {
             {
                 data.map((country, idx)=>(
                     <Link to={country.alpha3Code} key={idx}>
-                        <div className={`country-block ${blackTheme ? 'bg-DarkBlue text-white' : 'bg-white text-black'} xl:m-8 mx-4 pointer drop-shadow-md rounded-md`}>
+                        <div className={`country-block ${blackTheme ? 'bg-DarkBlue text-white' : 'bg-white text-black'} xl:m-8 mx-4 my-8 pointer drop-shadow-md rounded-md`}>
                             <img src={country.flag} alt="" className="w-full h-48 object-cover rounded-t-md"/>
                             <div className="country-info p-6 pb-12">
                                 <div className="name font-extrabold mb-3">{country.name}</div>
