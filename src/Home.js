@@ -4,7 +4,7 @@ import useFetch from "./useFetch"
 import { ThemeContext } from "./ThemeContext";
 
 const Home = () => {
-    const [x,setX]=useState('all')
+    const [x,setX]=useState('region/europe')
     const {data, error, isLoding}=useFetch(`https://restcountries.com/v2/${x}`);
     const[drop, setDrop]=useState(false)
     const blackTheme=useContext(ThemeContext)
@@ -13,7 +13,7 @@ const Home = () => {
         if(value!==''){
             setX(`name/${value}`)
         }else{
-            setX('all')
+            setX('region/europe')
         }
     }
     
@@ -35,7 +35,6 @@ const Home = () => {
                         <li className="py-0.5 px-4 hover:bg-DarkGray cursor-pointer" onClick={()=>setX('region/asia')}>Asia</li>
                         <li className="py-0.5 px-4 hover:bg-DarkGray cursor-pointer" onClick={()=>setX('region/europe')}>Europe</li>
                         <li className="py-0.5 px-4 hover:bg-DarkGray cursor-pointer" onClick={()=>setX('region/oceania')}>Oceania</li>
-                        <li className="py-0.5 px-4 hover:bg-DarkGray cursor-pointer" onClick={()=>setX('all')}>All Countries</li>
                     </ul>
                 </div> 
             </div>
